@@ -1,17 +1,22 @@
 <template>
 	<div>
 		<nav class="active">
-			<a href="#" class="home">Built-in editor</a>
-			<a href="#" class="projects">Order form</a>
-			<a href="#" class="services">Instant search</a>
-			<a href="#" class="contact">Switchable grid</a>
+			<router-link v-for="(route, index) in routes" :key="index" :to="route.url">
+				{{route.text}}
+			</router-link>
 		</nav>
 	</div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'NavigationMenu',
+  computed: {
+    ...mapGetters([
+      'routes'
+    ])
+  },
 }
 </script>
 <style>
@@ -59,10 +64,7 @@ nav a:first-child{
 nav a:last-child{
 	border-radius:0 2px 2px 0;
 }
-nav.home .home,
-nav.projects .projects,
-nav.services .services,
-nav.contact .contact{
+.router-link-active{
 	background-color:#e35885;
 }
 p{
