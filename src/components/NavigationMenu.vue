@@ -1,12 +1,12 @@
 <template>
-  <div id="main">
-    <nav v-bind:class="active" v-on:click.prevent>
-      <a href="#" class="home" v-on:click="makeActive('home')">Built-in editor</a>
-      <a href="#" class="projects" v-on:click="makeActive('projects')">Order form</a>
-      <a href="#" class="services" v-on:click="makeActive('services')">Instant search</a>
-      <a href="#" class="contact" v-on:click="makeActive('contact')">Switchable grid</a>
-    </nav>
-  </div>
+	<div>
+		<nav class="active">
+			<a href="#" class="home">Built-in editor</a>
+			<a href="#" class="projects">Order form</a>
+			<a href="#" class="services">Instant search</a>
+			<a href="#" class="contact">Switchable grid</a>
+		</nav>
+	</div>
 </template>
 
 <script>
