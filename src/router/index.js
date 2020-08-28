@@ -11,6 +11,11 @@ import E404 from '../components/E404'
 
 const routes = [
     {
+        path: '',
+        redirect: {name: 'builtInEditor'}
+    },
+    {
+        name: 'builtInEditor',
         path: '/builtInEditor',
         component: PuiltInEditor
     },
