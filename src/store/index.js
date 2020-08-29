@@ -38,11 +38,17 @@ export default new Vuex.Store({
         }
     },
     mutations: {
+        hideModalEdit(state) {
+            return state.modalShow = false
+        },
         showModalEdit(state) {
-            return state.modalShow = true
+            return state.modalShow = !state.modalShow
         }
     },
     actions: {
+        hideModalEdit(store) {
+            return store.commit('hideModalEdit')
+        },
         showModalEdit(store) {
             return store.commit('showModalEdit')
         }
