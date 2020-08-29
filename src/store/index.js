@@ -43,6 +43,9 @@ export default new Vuex.Store({
         },
         showModalEdit(state) {
             return state.modalShow = !state.modalShow
+        },
+        textModalEdit(state, payload) {
+            return state.textValue =  payload
         }
     },
     actions: {
@@ -51,6 +54,9 @@ export default new Vuex.Store({
         },
         showModalEdit(store) {
             return store.commit('showModalEdit')
+        },
+        textModalEdit(store, payload) {
+            return store.commit('textModalEdit', payload)
         }
     }
 })

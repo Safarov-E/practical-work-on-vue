@@ -1,7 +1,7 @@
 <template>
   <div id="main" @click="hideModalEdit">
     <div class="tooltip" v-on:click.stop v-if="modalShow">
-      <input type="text" />
+      <input type="text" @input="textModalEdit($event.target.value)" :value="textValue"/>
     </div>
     <p @click.stop ="showModalEdit">{{textValue}}</p>
   </div>
@@ -21,7 +21,8 @@ export default {
   methods: {
     ...mapActions([
 		'showModalEdit',
-		'hideModalEdit'
+		'hideModalEdit',
+		'textModalEdit'
     ])
   }
 }
