@@ -10,6 +10,7 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   name: 'NavigationMenu',
   computed: {
@@ -17,6 +18,11 @@ export default {
       'routes'
     ])
   },
+  methods: {
+    ...mapActions([
+      'showModalEdit'
+    ])
+  }
 }
 </script>
 <style>

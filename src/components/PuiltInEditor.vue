@@ -1,16 +1,29 @@
 
 <template>
   <div id="main">
-    <div class="tooltip">
+    <div class="tooltip" v-if="modalShow">
       <input type="text" />
     </div>
-    <p>Правь меня.</p>
+    <p @click="showModalEdit">{{textValue}}</p>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   name: 'PuiltInEditor',
+  computed: {
+    ...mapGetters([
+      'textValue',
+      'modalShow'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'showModalEdit'
+    ])
+  }
 }
 </script>
 <style scoped>
