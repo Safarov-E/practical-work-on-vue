@@ -2,8 +2,8 @@
 <template>
   <form id="main" v-cloak>
     <div class="bar">
-      <a class="list-icon" :class="{'active': !showTitle}" @click="showTitleImages"></a>
-      <a class="grid-icon" :class="{'active': showTitle}" @click="showTitleGrid"></a>
+      <a class="list-icon" :class="{'active': showTitle}" @click="showTitleGrid"></a>
+      <a class="grid-icon" :class="{'active': !showTitle}" @click="showTitleImages"></a>
     </div>
     <ul>
       <li :class="{'titleText': showTitle, 'images': !showTitle}" v-for="(newArticle, i) in newArticles" :key="i">
