@@ -24,7 +24,29 @@ export default new Vuex.Store({
             }
         ],
         textValue: 'Правь меня.',
-        modalShow: false
+        modalShow: false,
+        services: [
+            {
+                name: 'Веб разработка',
+                price: 300,
+                active:true
+            },
+            {
+                name: 'Дизайн',
+                price: 400,
+                active:false
+            },
+            {
+                name: 'Интеграция',
+                price: 250,
+                active:false
+            },
+            {
+                name: 'Обучение',
+                price: 220,
+                active:false
+            }
+        ]
     },
     getters: {
         routes(state) {
@@ -35,6 +57,9 @@ export default new Vuex.Store({
         },
         modalShow(state) {
             return state.modalShow
+        },
+        services(state) {
+            return state.services
         }
     },
     mutations: {
