@@ -68,7 +68,8 @@ export default new Vuex.Store({
                 "title": "Учебный план по осваиванию современного JavaScript",
                 "image": "https://media.proglib.io/wp-uploads/2016/12/19aqEe1RQXAh77hA07VZN0w.png"
             }
-        ]
+        ],
+        query: ''
     },
     getters: {
         routes(state) {
@@ -93,7 +94,9 @@ export default new Vuex.Store({
             return amount
         },
         articles(state) {
-            return state.articles
+            return state.articles.filter((item) => {
+                return item.title.toLowerCase().indexOf(state.query) != -1
+            })
         }
     },
     mutations: {
@@ -108,6 +111,9 @@ export default new Vuex.Store({
         },
         activeElement(state, payload) {
             return state.services[payload].active = !state.services[payload].active
+        },
+        searchArticles(state, payload) {
+            return state.query = payload
         }
     },
     actions: {
@@ -122,6 +128,9 @@ export default new Vuex.Store({
         },
         activeElement(store, payload) {
             return store.commit('activeElement', payload)
+        },
+        searchArticles(store, payload) {
+            return store.commit('searchArticles', payload)
         }
     }
 })

@@ -2,7 +2,7 @@
 <template>
 <form id="main" v-cloak>
   <div class="bar">
-    <input type="text" placeholder="Введите название статьи" />
+    <input type="text" placeholder="Введите название статьи" @input="searchArticles($event.target.value)" />
   </div>
   <ul>
   <li v-for="(article, i) in articles" :key="i">
@@ -15,11 +15,17 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   name: 'InstantSearch',
   computed: {
     ...mapGetters([
       'articles'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'searchArticles'
     ])
   }
 }
