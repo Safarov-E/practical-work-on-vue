@@ -5,15 +5,57 @@
       <a class="list-icon active"></a>
       <a class="grid-icon active"></a>
     </div>
+    <ul>
+      <li class="titleText" v-for="(newArticle, i) in newArticles" :key="i">
+		<img class="imagesTitle" :src="newArticle.url" alt="">
+		<p class="title">{{newArticle.title}}</p>
+      </li>
+    </ul>
   </form>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name: 'SwitchableGrid',
+  computed: {
+    ...mapGetters([
+      'newArticles'
+    ])
+  },
 }
 </script>
 <style scoped>
+ul {
+  width: 580px;
+  margin: 45px auto 25px;
+}
+ul li {
+  list-style: none;
+}
+.images {
+	display: inline-block;
+}
+.imagesOne {
+  width: 260px;
+  height: 130px;
+  padding: 10px;
+}
+.titleText {
+	display: flex;
+	align-items: center;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid black;
+}
+.imagesTitle {
+	width: 100px;
+}
+.title {
+	font-size: 14px;
+	text-align: left;
+	padding-left: 10px;
+}
 a, a:visited {
 	outline:none;
 	color:#389dc1;
@@ -26,11 +68,6 @@ a:hover{
 section, footer, header, aside, nav{
 	display: block;
 }
-
-/*-------------------------
-	Строка с переключателями
---------------------------*/
-
 .bar{
 	background-color:#5c9bb7;
 
@@ -88,59 +125,5 @@ section, footer, header, aside, nav{
 	font-weight: bold;
 	outline: none;
 	text-indent: 40px;
-}
-
-/*-------------------------
-	Список
---------------------------*/
-
-ul.list{
-	list-style: none;
-	width: 500px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-ul.list li{
-	border-bottom: 1px solid #ddd;
-	padding: 10px;
-	overflow: hidden;
-}
-
-ul.list li img{
-	width:120px;
-	height:80px;
-	float:left;
-	border:none;
-}
-
-ul.list li p{
-	margin-left: 135px;
-	font-weight: bold;
-	color:#6e7a7f;
-}
-
-/*-------------------------
-	Сетка
---------------------------*/
-
-ul.grid{
-	list-style: none;
-	width: 570px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-ul.grid li{
-	padding: 2px;
-	float:left;
-}
-
-ul.grid li img{
-	width:280px;
-	height:280px;
-	object-fit: cover;
-	display:block;
-	border:none;
 }
 </style>

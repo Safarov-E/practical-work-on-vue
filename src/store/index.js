@@ -121,6 +121,9 @@ export default new Vuex.Store({
             return state.articles.filter((item) => {
                 return item.title.toLowerCase().indexOf(state.query) != -1
             })
+        },
+        newArticles(state) {
+            return state.newArticles
         }
     },
     mutations: {
