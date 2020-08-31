@@ -93,7 +93,8 @@ export default new Vuex.Store({
         {
             "title": "Путь веб-разработчика в 2017",
             "url": "https://49.img.avito.st/image/1/gNeYHba_LD7uuN44lCuw-Gy-KjQmfijMKr4uOCC4Lj4s-A"
-        }]
+        }],
+        showTitle: true
     },
     getters: {
         routes(state) {
@@ -124,6 +125,9 @@ export default new Vuex.Store({
         },
         newArticles(state) {
             return state.newArticles
+        },
+        showTitle(state) {
+            return state.showTitle
         }
     },
     mutations: {
@@ -141,6 +145,9 @@ export default new Vuex.Store({
         },
         searchArticles(state, payload) {
             return state.query = payload
+        },
+        showTitleImages(state) {
+            return state.showTitle = false
         }
     },
     actions: {
@@ -158,6 +165,9 @@ export default new Vuex.Store({
         },
         searchArticles(store, payload) {
             return store.commit('searchArticles', payload)
+        },
+        showTitleImages(store) {
+            return store.commit('showTitleImages')
         }
     }
 })

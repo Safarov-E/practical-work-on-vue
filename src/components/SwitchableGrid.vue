@@ -2,13 +2,13 @@
 <template>
   <form id="main" v-cloak>
     <div class="bar">
-      <a class="list-icon active"></a>
+      <a class="list-icon active" @click="showTitleImages"></a>
       <a class="grid-icon active"></a>
     </div>
     <ul>
-      <li class="titleText" v-for="(newArticle, i) in newArticles" :key="i">
-		<img class="imagesTitle" :src="newArticle.url" alt="">
-		<p class="title">{{newArticle.title}}</p>
+      <li :class="{'titleText': showTitle, 'images': !showTitle}" v-for="(newArticle, i) in newArticles" :key="i">
+		<img :class="{'imagesTitle': showTitle, 'imagesOne': !showTitle}" :src="newArticle.url" alt="">
+		<p v-if="showTitle" class="title">{{newArticle.title}}</p>
       </li>
     </ul>
   </form>
@@ -16,13 +16,20 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   name: 'SwitchableGrid',
   computed: {
     ...mapGetters([
-      'newArticles'
+		'newArticles',
+		'showTitle'
     ])
   },
+  methods: {
+    ...mapActions([
+      'showTitleImages'
+    ])
+  }
 }
 </script>
 <style scoped>
