@@ -148,6 +148,9 @@ export default new Vuex.Store({
         },
         showTitleImages(state) {
             return state.showTitle = false
+        },
+        showTitleGrid(state) {
+            return state.showTitle = true
         }
     },
     actions: {
@@ -168,6 +171,9 @@ export default new Vuex.Store({
         },
         showTitleImages(store) {
             return store.commit('showTitleImages')
+        },
+        showTitleGrid(store) {
+            return store.commit('showTitleGrid')
         }
     }
 })

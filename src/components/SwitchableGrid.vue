@@ -2,8 +2,8 @@
 <template>
   <form id="main" v-cloak>
     <div class="bar">
-      <a class="list-icon active" @click="showTitleImages"></a>
-      <a class="grid-icon active"></a>
+      <a class="list-icon" :class="{'active': !showTitle}" @click="showTitleImages"></a>
+      <a class="grid-icon" :class="{'active': showTitle}" @click="showTitleGrid"></a>
     </div>
     <ul>
       <li :class="{'titleText': showTitle, 'images': !showTitle}" v-for="(newArticle, i) in newArticles" :key="i">
@@ -27,7 +27,8 @@ export default {
   },
   methods: {
     ...mapActions([
-      'showTitleImages'
+      'showTitleImages',
+		'showTitleGrid'
     ])
   }
 }
