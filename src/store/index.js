@@ -71,6 +71,9 @@ export default new Vuex.Store({
         },
         textModalEdit(state, payload) {
             return state.textValue =  payload
+        },
+        activeElement(state, payload) {
+            return state.services[payload].active = !state.services[payload].active
         }
     },
     actions: {
@@ -82,6 +85,9 @@ export default new Vuex.Store({
         },
         textModalEdit(store, payload) {
             return store.commit('textModalEdit', payload)
+        },
+        activeElement(store, payload) {
+            return store.commit('activeElement', payload)
         }
     }
 })

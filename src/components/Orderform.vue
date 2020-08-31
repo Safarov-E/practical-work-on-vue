@@ -3,7 +3,9 @@
   <form id="main">
     <h1>Услуги</h1>
     <ul>
-      <li v-for="(servis, i) in services" :key="i" :class="{ 'active': servis.active}">
+      <li v-for="(servis, i) in services" :key="i" 
+          :class="{ 'active': servis.active}"
+          @click="activeElement(i)">
       {{servis.name}} <span>${{servis.price}}.00</span>
       </li>
     </ul>
@@ -15,11 +17,17 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
 export default {
   name: 'Orderform',
   computed: {
     ...mapGetters([
       'services'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'activeElement'
     ])
   }
 }
