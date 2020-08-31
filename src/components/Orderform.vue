@@ -10,7 +10,7 @@
       </li>
     </ul>
   <div class="total">
-    Итого: <span></span>
+    Итого: <span>${{ totalAmount }}.00</span>
   </div>
   </form>
 </template>
@@ -22,7 +22,8 @@ export default {
   name: 'Orderform',
   computed: {
     ...mapGetters([
-      'services'
+      'services',
+      'totalAmount'
     ])
   },
   methods: {

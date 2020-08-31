@@ -60,6 +60,15 @@ export default new Vuex.Store({
         },
         services(state) {
             return state.services
+        },
+        totalAmount(state) {
+            let amount = 0
+            state.services.forEach(item => {
+                if(item.active) {
+                    amount += item.price
+                }
+            })
+            return amount
         }
     },
     mutations: {
