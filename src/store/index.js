@@ -69,7 +69,31 @@ export default new Vuex.Store({
                 "image": "https://media.proglib.io/wp-uploads/2016/12/19aqEe1RQXAh77hA07VZN0w.png"
             }
         ],
-        query: ''
+        query: '',
+        newArticles: [{
+            "title": "27 сайтов с задачками для оттачивания навыков программирования",
+            "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--mOKgs823--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/pj6e4ovumyhtuvvr3hen.png"
+        },
+        {
+            "title": "Готовимся к собеседованию в Google: 8 месяцев непрерывной работы",
+            "url": "https://clean-code.org/wp-content/uploads/2020/07/интернет-ресурсы-960x540.jpg"
+        },
+        {
+            "title": "15 материалов по разработке игр",
+            "url": "https://secure.meetupstatic.com/photos/event/9/d/0/a/600_490420202.jpeg"
+        },
+        {
+            "title": "Учебный план по осваиванию современного JavaScript",
+            "url": "https://sun9-12.userapi.com/c857016/v857016560/1062ed/GpMcr62ZCVM.jpg"
+        },
+        {
+            "title": "10 лучших видеокурсов для изучения Linux",
+            "url": "https://pbs.twimg.com/media/EF2WurXUYAANstd.jpg"
+        },
+        {
+            "title": "Путь веб-разработчика в 2017",
+            "url": "https://49.img.avito.st/image/1/gNeYHba_LD7uuN44lCuw-Gy-KjQmfijMKr4uOCC4Lj4s-A"
+        }]
     },
     getters: {
         routes(state) {
